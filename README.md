@@ -1,21 +1,19 @@
-# React menu context
+# React context menu
 
 ![version](https://img.shields.io/badge/version-0.0.1-blue.svg)
 
-A reusable and customizable React component for displaying tabular data.
-It supports dynamic columns and rows with clean, minimal styling — ideal for rendering lists, reports, or admin dashboards with minimal setup.
+A lightweight and customizable React component for implementing context menus. It supports dynamic menu generation, flexible styling options,
+and both predefined and custom menu icons. This makes it ideal for applications requiring dynamic right-click menus with full control over behavior and appearance.
 
-This lightweight and minimalistic data table includes essential features out of the box.
-
-![Project Screenshot](src/assets/images/default-table.png)
+![Project Screenshot](/screenshot-context-menu.png)
 
 ## Key build-in features
 
-- ✅ Sorting by column
-- ✅ Searching
-- ✅ Pagination
-- ✅ Custom theming
-- ✅ Responsive
+- ✅ Dynamic Menu items 
+- ✅ Predefined icons
+- ✅ Custom icons
+- ✅ Multiple context menu implementation.
+
 
 ## 📦 Installation
 
@@ -25,51 +23,63 @@ npm react-menu-context
 ## 🚀 Usage
 
 ```js
-import DataTableGrid  from "data-table-grid";
+import {ContextProvider, ContextMenu}  from "react-menu-context";
 
 
-const users = [
-  { id: 1, name: "Alice", email: "alice@example.com" },
-  { id: 2, name: "Bob", email: "bob@example.com" },
-];
-
-const headers = [
-  { 
-    label: "ID",
-    key: "id"
+const menuItems=[
+  {
+    label:'Cut',  
+    onClick:()=>{console.log('delete')},
+    iconType:'scissor',
   },
   {
-    label: "User name",
-    key: "name",
-    sorting:true
+    label:'Copy task',
+    onClick:()=>{console.log('delete')},
+    iconType:'copy',
   },
   {
-    label: "Email address",
-    key: "email"
+    label:'Edit content',
+    onClick:()=>{console.log('delete')},
+    iconType:'edit',
   },
-];
+  {
+    label:'Insert new task',
+    onClick:()=>{console.log('delete')},
+    iconType:'add',
+  },
+  {
+    label:'View full screen',
+    onClick:()=>{console.log('delete')},
+    iconType:'expand',
+  },
+  {
+    label:'Subscribe newsletter',
+    onClick:()=>{console.log('delete')},
+    iconType:'bell',
+  },
+  {
+    label:'Move to trash',
+    onClick:()=>{console.log('delete')},
+    iconType:'delete',
+  },
+  {
+    label:'Close',
+    onClick:()=>{console.log('delete')},
+    iconType:'cancel',
+  },
+]
 
 function App() {
   return (
-    <DataTableGrid 
-        headers={headers} 
-        rows={users} 
-        showActionBar = {true}
-        stripe= {true}
-        className={'cutom-class-name'}
-        theme={{
-            text:{
-                default:'#212529',
-            }
-            background:{
-                default:'#0076bf',
-            },
-            border:{
-                default:'#dee2e6'
-            }
-            
-        }}
-    />
+    <ContextProvider id={123} className='custom-styling-name'>
+      <button>Right clik action</button>
+      <ContextMenu 
+        menuItems={menuItems}
+        className='custom-class-name'
+        id={123}
+      />
+    <ContextProvider/>
+    
   );
 }
 
@@ -86,31 +96,6 @@ function App() {
 | onRowClick    | function  |      | On row click, the data of the selected row is returned.
 | className     | string    |      | A custom `className` for the table's container wrapper, enabling custom styling.
 
-## Theming
-The table's color scheme is theme-based and fully customizable via props. You can provide your own color variants to modify the table's look and feel.
-
-### Default table color scheme.
-```js
-  const theme = {
-      text:{
-          dark:'#202020',
-          default:'#515151'
-      },
-      background:{
-          default:"#ffffff",
-          striped:'#e9ecef',
-          warn:'#d62828',
-          header:'#ffffff',
-          body:'#ffffff'
-      },
-      shade:{
-          default:'#dee2e6'
-      },
-      border:{
-          default:'#adb5bd'
-      }
-  }
-```
 
 ### Custom table color sheme
 ![Project Screenshot](src/assets/images/theme-green.png)
