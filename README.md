@@ -20,7 +20,7 @@ This lightweight and minimalistic data table includes essential features out of 
 ## 📦 Installation
 
 ```bash
-npm install data-table-grid
+npm react-menu-context
 ```
 ## 🚀 Usage
 

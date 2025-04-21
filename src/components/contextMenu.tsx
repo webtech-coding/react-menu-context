@@ -80,7 +80,14 @@ const ContextMenu:FC<ContextMenupProps>=({menuItems, id, className}):ReactElemen
      * @returns void
      */
     const handleContextMenu= (e):void=>{
-        const contextMenuData = e.detail;    
+        const contextMenuData = e.detail; 
+
+        const allContextMenus = document.querySelectorAll<HTMLElement>('.context-menu');
+        allContextMenus.forEach((menu)=>{
+            if(menu.id !==id){
+                menu.style.visibility = 'hidden'
+            }
+        })
        
         if(contextMenuData.id !== id)return
         setMouseClickPosition({
