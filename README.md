@@ -42,7 +42,7 @@ const menuItems=[
   {
     label:'Edit content',
     onClick:()=>{console.log('delete')},
-    iconType:'edit',
+    icon:<CustomIcon/>,
   },
   {
     label:'Move to trash',
@@ -104,25 +104,28 @@ A data structure that defines a specific menu displayed in the context menu inte
 ## Icons
 >[!NOTE]
 >There are two type of icons in the context menu
->1. build in icons
+>1. built-in icons
 >2. custom icons
 
 ### built-in icons
 
 ![build-in icons](./Screenshot-icons.png)
 
-The built-in icons can be added to the menu item by `icon name`
+The built-in icons can be added to the menu item by providing a name to the `iconType`
 ```js
 {
+  ...,
   lable:'Move to trash'
   iconType:'delete'
 },
 {
+  ...,
   label:'Save data'
   iconType:'save'
 }
 ```
-
+### custom icons
+If necessary, custom icon can be provided to the context menu. The Custom menu can be a component that returns a svg icon, or i am image tag. 
 
 ```js
   const MenuIcon=()=>{
@@ -132,16 +135,17 @@ The built-in icons can be added to the menu item by `icon name`
       </svg>
     )
   }
+
+  const menuItems=[
+    {
+      label:'Custom icon menu',
+      icon:<MenuIcon />,
+      onClick:{()=>console.log()}
+    },
+    {
+      label:'Custom image menu',
+      icon:<img src='./image/source' />,
+      onClick:{()=>console.log()}
+    }
+  ]
 ```
-```js
-  const menuItem={
-    label:'Custom menu',
-    icon:<MenuIcon />,
-    onClick:{()=>console.log()}
-  }
-```
-
-
-### Custom table color sheme
-![Project Screenshot](src/assets/images/theme-green.png)
-
