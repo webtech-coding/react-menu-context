@@ -88,7 +88,7 @@ A React component that displays a list of contextual menu options in response to
 | className | string    |             | A custom `className` for enabling custom styling for the wrapper `div` of the context menu. |
 | menuItems | array     |             | Array of menu items object in the context menu. |
 
-### MenuItem properties
+### MenuItem
 A data structure that defines a specific menu displayed in the context menu interface.
 
 | Name | Type | Default | Description |
@@ -97,18 +97,31 @@ A data structure that defines a specific menu displayed in the context menu inte
 | icon | component |                  | A custom component for icon.                          |
 | iconType| string |                  | built-in icon types identified by name.               |
 | onClick | function |                | function call when the specific menu item is clicked. |
+| disabled | boolean | false          | Whether the menu item should be active or not         |
 
 
 
 ## Icons
-[!NOTE]
-There are two type of icons in the context menu
-1. build in icons
-2. custom icons
+>[!NOTE]
+>There are two type of icons in the context menu
+>1. build in icons
+>2. custom icons
 
 ### built-in icons
 
 ![build-in icons](./Screenshot-icons.png)
+
+The built-in icons can be added to the menu item by `icon name`
+```js
+{
+  lable:'Move to trash'
+  iconType:'delete'
+},
+{
+  label:'Save data'
+  iconType:'save'
+}
+```
 
 
 ```js
