@@ -125,7 +125,7 @@ The built-in icons can be added to the menu item by providing a name to the `ico
 }
 ```
 ### custom icons
-If necessary, custom icon can be provided to the context menu. The Custom menu can be a component that returns a svg icon, or i am image tag. 
+Custom icons can be provided to the context menu as either React components returning `SVG elements` or as <img> tags referencing image files
 
 ```js
   const MenuIcon=()=>{
