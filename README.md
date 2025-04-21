@@ -7,7 +7,7 @@ and both predefined and custom menu icons.
 
 This makes it ideal for applications requiring dynamic right-click menus with full control over behavior and appearance.
 
-![Project Screenshot](./Screenshot-context-menu.png)
+![Project Screenshot](Screenshot-context-menu.png)
 
 ## Key build-in features
 
@@ -97,7 +97,7 @@ A data structure that defines a specific menu displayed in the context menu inte
 | icon | component |                  | A custom component for icon.                          |
 | iconType| string |                  | built-in icon types identified by name.               |
 | onClick | function |                | function call when the specific menu item is clicked. |
-| disabled | boolean | false          | Whether the menu item should be active or not         |
+| disabled | boolean | false          | Whether the menu item should be active or not.        |
 
 
 
@@ -109,7 +109,7 @@ A data structure that defines a specific menu displayed in the context menu inte
 
 ### built-in icons
 
-![build-in icons](./Screenshot-icons.png)
+![build-in icons](Screenshot-icons.png)
 
 The built-in icons can be added to the menu item by providing a name to the `iconType`
 ```js
@@ -125,7 +125,7 @@ The built-in icons can be added to the menu item by providing a name to the `ico
 }
 ```
 ### custom icons
-Custom icons can be provided to the context menu as either React components returning `SVG elements` or as <img> tags referencing image files
+Custom icons can be provided to the context menu as either React components returning `SVG elements` or as `<img>` tags referencing image files
 
 ```js
   const MenuIcon=()=>{

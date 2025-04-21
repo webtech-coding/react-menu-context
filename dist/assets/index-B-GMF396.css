@@ -1,3 +1,7 @@
+.context-menu-provider{
+  background-color: red;
+}
+
 .context-menu{
   box-shadow: 0 0 15px #b3b3b3;
   min-width: 200px;
@@ -9,6 +13,10 @@
 
 .context-menu--show{
   display: block;
+}
+
+.context-menu-items{
+  
 }
 
 .context-menu-item{
