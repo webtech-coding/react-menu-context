@@ -3,7 +3,9 @@
 ![version](https://img.shields.io/badge/version-0.0.1-blue.svg)
 
 A lightweight and customizable React component for implementing context menus. It supports dynamic menu generation, flexible styling options,
-and both predefined and custom menu icons. This makes it ideal for applications requiring dynamic right-click menus with full control over behavior and appearance.
+and both predefined and custom menu icons.
+
+This makes it ideal for applications requiring dynamic right-click menus with full control over behavior and appearance.
 
 ![Project Screenshot](./Screenshot-context-menu.png)
 
@@ -18,7 +20,7 @@ and both predefined and custom menu icons. This makes it ideal for applications 
 ## 📦 Installation
 
 ```bash
-npm react-menu-context
+npm install react-menu-context
 ```
 ## 🚀 Usage
 
@@ -43,32 +45,11 @@ const menuItems=[
     iconType:'edit',
   },
   {
-    label:'Insert new task',
-    onClick:()=>{console.log('delete')},
-    iconType:'add',
-    disabled:true
-  },
-  {
-    label:'View full screen',
-    onClick:()=>{console.log('delete')},
-    iconType:'expand',
-  },
-  {
-    label:'Subscribe newsletter',
-    onClick:()=>{console.log('delete')},
-    iconType:'bell',
-  },
-  {
     label:'Move to trash',
     onClick:()=>{console.log('delete')},
     iconType:'delete',
     disabled:true
-  },
-  {
-    label:'Close',
-    onClick:()=>{console.log('delete')},
-    iconType:'cancel',
-  },
+  }
 ]
 
 function App() {
@@ -105,24 +86,35 @@ A React component that displays a list of contextual menu options in response to
 | Name | Type | Default | Description |
 | ---  | ---  | ------  | -------     |
 | id   | string, number |             | The identfier that binds ContextMenu with ContextProvider.     |
-| className | string    |             | A custom `className` for enabling custom styling for the wrapper `div` of the context. |
-| menuItems | Array     |             | Array of menu items in the context menu. |
+| className | string    |             | A custom `className` for enabling custom styling for the wrapper `div` of the context menu. |
+| menuItems | Array     |             | Array of menu items object in the context menu. |
 
 ### menuItem properties
-- **label** : The label or text for the context menu
-- **icon**: A custom component for icon.
+| Name | Type | Default | Description |
+| ---  | ---  | ------  | -------     |
+| label| string |       |             | The label or text for the context menu.               |
+| icon | component |    |             | A custom component for icon.                          |
+| iconType| string|     |             | built-in icon types identified by name.               |
+| onClick | Array  |    |             | function call when the specific menu item is clicked. |
+
+
+
+## Icons
+
 ```js
   const MenuIcon=()=>{
     return(
-      <svg width="20" height="20" viewBox="0 0 20 20">
-          <path d="M11 9v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM10 20c-5.523 0-10-4.477-10-10s4.477-10 10-10v0c5.523 0 10 4.477 10 10s-4.477 10-10 10v0z"></path>
+      <svg>
+          <path> ... </path>
       </svg>
     )
   }
-  {
-    ...
-    icon:<MenuIcon/>
-    ...
+```
+```js
+  const menuItem={
+    label:'Custom menu',
+    icon:<MenuIcon />,
+    onClick:{()=>console.log()}
   }
 ```
 
