@@ -5,7 +5,7 @@
 A lightweight and customizable React component for implementing context menus. It supports dynamic menu generation, flexible styling options,
 and both predefined and custom menu icons. This makes it ideal for applications requiring dynamic right-click menus with full control over behavior and appearance.
 
-![Project Screenshot](screenshot-context-menu.png)
+![Project Screenshot](./Screenshot-context-menu.png)
 
 ## Key build-in features
 
@@ -108,6 +108,23 @@ A React component that displays a list of contextual menu options in response to
 | className | string    |             | A custom `className` for enabling custom styling for the wrapper `div` of the context. |
 | menuItems | Array     |             | Array of menu items in the context menu. |
 
+### menuItem properties
+- **label** : The label or text for the context menu
+- **icon**: A custom component for icon.
+```js
+  const MenuIcon=()=>{
+    return(
+      <svg width="20" height="20" viewBox="0 0 20 20">
+          <path d="M11 9v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM10 20c-5.523 0-10-4.477-10-10s4.477-10 10-10v0c5.523 0 10 4.477 10 10s-4.477 10-10 10v0z"></path>
+      </svg>
+    )
+  }
+  {
+    ...
+    icon:<MenuIcon/>
+    ...
+  }
+```
 
 
 ### Custom table color sheme
