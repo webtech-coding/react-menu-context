@@ -65,7 +65,6 @@ function App() {
     
   );
 }
-
 ```
 
 ## ContextProvider
@@ -87,19 +86,30 @@ A React component that displays a list of contextual menu options in response to
 | ---  | ---  | ------  | -------     |
 | id   | string, number |             | The identfier that binds ContextMenu with ContextProvider.     |
 | className | string    |             | A custom `className` for enabling custom styling for the wrapper `div` of the context menu. |
-| menuItems | Array     |             | Array of menu items object in the context menu. |
+| menuItems | array     |             | Array of menu items object in the context menu. |
 
-### menuItem properties
+### MenuItem properties
+A data structure that defines a specific menu displayed in the context menu interface.
+
 | Name | Type | Default | Description |
 | ---  | ---  | ------  | -------     |
-| label| string |       |             | The label or text for the context menu.               |
-| icon | component |    |             | A custom component for icon.                          |
-| iconType| string|     |             | built-in icon types identified by name.               |
-| onClick | Array  |    |             | function call when the specific menu item is clicked. |
+| label| string |                     | The label or text for the context menu.               |
+| icon | component |                  | A custom component for icon.                          |
+| iconType| string |                  | built-in icon types identified by name.               |
+| onClick | function |                | function call when the specific menu item is clicked. |
 
 
 
 ## Icons
+[!NOTE]
+There are two type of icons in the context menu
+1. build in icons
+2. custom icons
+
+### built-in icons
+
+![build-in icons](./Screenshot-icons.png)
+
 
 ```js
   const MenuIcon=()=>{
